@@ -1,0 +1,9 @@
+#Global
+.DS_Store
+.env
+
+# Client
+client/node_modules/
+
+# Serveur
+server/node_modules/
