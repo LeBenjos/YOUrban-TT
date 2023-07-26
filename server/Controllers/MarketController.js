@@ -72,9 +72,7 @@ class MarketController{
     selectMarketByTypeAndCity(req, res){
         const type = this.service.selectMarketByType(req.params.type)
         const city = this.service.selectMarketByCity(req.params.city)
-        const response = type.filter(marketT => city.some(marketC => marketT.location == marketC.location))
-        console.log(response)
-        
+        const response = type.filter(marketT => city.some(marketC => marketT.location == marketC.location))        
         res.send(response)
     }
 }
