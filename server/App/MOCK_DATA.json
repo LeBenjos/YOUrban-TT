@@ -8006,13 +8006,5 @@
     "location": "Angoulème",
     "address": "3 rue du pont",
     "mail": "blabla@optique.com"
-  },
-  {
-    "id": 1002,
-    "etablissement_type": "Plantes",
-    "etablissement": "Jardilande",
-    "location": "Tourquoin",
-    "address": "19 rue des roses",
-    "mail": "bluet@jardi.land"
   }
 ]

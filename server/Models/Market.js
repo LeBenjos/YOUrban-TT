@@ -1,6 +1,7 @@
 export default class Market{
-    constructor(id){
+    setId(id){
         this.id = id
+        return this
     }
 
     setEtablissement_type(etablissement_type){
