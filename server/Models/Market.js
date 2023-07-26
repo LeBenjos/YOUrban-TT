@@ -1,10 +1,12 @@
 export default class Market{
     setId(id){
-        this.id = id
+        if(Number.isInteger(id)){
+            this.id = id
+        }
         return this
     }
 
-    setEtablissement_type(etablissement_type){
+    setEtablissementType(etablissement_type){
         this.etablissement_type = etablissement_type
         return this
     }
@@ -25,7 +27,10 @@ export default class Market{
     }
 
     setMail(mail){
-        this.mail = mail
+        const validRegex = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/
+        if(mail.match(validRegex)){
+            this.mail = mail
+        }
         return this
     }
 

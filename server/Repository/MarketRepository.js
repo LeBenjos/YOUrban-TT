@@ -13,6 +13,10 @@ export default class MarketRepository{
         return this.dbMarkets.data.filter(market => market.id == id)
     }
 
+    getMarketByName(name){
+        return this.dbMarkets.data.filter(market => market.etablissement == name)
+    }
+
     deleteMarket(id){
         this.dbMarkets.data = this.dbMarkets.data.filter(market => market.id != id)
         this.dbMarkets.encodeData()

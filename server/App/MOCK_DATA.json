@@ -8003,8 +8003,16 @@
     "id": 1001,
     "etablissement_type": "Lunettes",
     "etablissement": "Optique 2000",
-    "location": "Angoulème",
-    "address": "3 rue du pont",
-    "mail": "blabla@optique.com"
+    "location": "Angoulême",
+    "address": "3 Rue du Pont",
+    "mail": "oeil@optique.com"
+  },
+  {
+    "id": 1002,
+    "etablissement_type": "Plantes",
+    "etablissement": "Jardiland",
+    "location": "Tourcoing",
+    "address": "19 Rue des Roses",
+    "mail": "bleuet@jardi.land"
   }
 ]

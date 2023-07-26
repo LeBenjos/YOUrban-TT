@@ -7,8 +7,10 @@ class Validator{
         }
     }
 
-    isName(){
-        
+    isName(req, res, next, id){
+        if(true){
+            next()
+        }
     }
 }
 
