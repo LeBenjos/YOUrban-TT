@@ -18,6 +18,7 @@ class MarketController{
             if(!this.service.isIdExist(id)){
                 throw new Error("This market doesn't exist")
             }
+
             const market = this.service.getMarketById(id)
             res.send(market)
         } else if(req.params.name){
@@ -27,6 +28,7 @@ class MarketController{
             if(!this.service.isNameExist(name)){
                 throw new Error("This market doesn't exist")
             }
+            
             const market = this.service.getMarketByName(name)
             res.send(market)
         }
