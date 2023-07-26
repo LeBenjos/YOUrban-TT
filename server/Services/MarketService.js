@@ -114,7 +114,6 @@ export default class MarketService{
             market.setMail(mail)
         }
 
-        console.log(etablissement_type)
         this.repository.deleteMarket(req.params.id)
         this.repository.addMarket([market])
     }
