@@ -119,6 +119,44 @@ export default class MarketService{
         this.repository.addMarket([market])
     }
 
+    selectMarketByCity(city){
+        const allCityMarket = this.repository.selectMarketByCity(city)
+        const response = []
+
+        allCityMarket.forEach(market => {
+            response.push(
+                new Market()
+                .setId(market.id)
+                .setEtablissementType(market.etablissement_type)
+                .setEtablissement(market.etablissement)
+                .setLocation(market.location)
+                .setAddress(market.address)
+                .setMail(market.mail)
+            )
+        });
+
+        return response
+    }
+
+    selectMarketByType(type){
+        const allTypeMarket = this.repository.selectMarketByType(type)
+        const response = []
+
+        allTypeMarket.forEach(market => {
+            response.push(
+                new Market()
+                .setId(market.id)
+                .setEtablissementType(market.etablissement_type)
+                .setEtablissement(market.etablissement)
+                .setLocation(market.location)
+                .setAddress(market.address)
+                .setMail(market.mail)
+            )
+        });
+
+        return response
+    }
+
     isIdExist(id){
         if(this.getMarketById(id) instanceof Market){
             return true

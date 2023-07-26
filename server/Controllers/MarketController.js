@@ -22,13 +22,11 @@ class MarketController{
             const market = this.service.getMarketById(id)
             res.send(market)
         } else if(req.params.name){
-            let name = req.params.name
-            const nameArray = name.split("_")
-            name = nameArray.join(" ")
+            const name = req.params.name
             if(!this.service.isNameExist(name)){
                 throw new Error("This market doesn't exist")
             }
-            
+
             const market = this.service.getMarketByName(name)
             res.send(market)
         }
@@ -59,6 +57,25 @@ class MarketController{
 
         this.service.updateMarket(req, this.service.getMarketById(id))
         res.send(`Market ${id} updated`)
+    }
+
+    selectMarketByType(req, res){
+        const market = this.service.selectMarketByType(req.params.type)
+        res.send(market)
+    }
+
+    selectMarketByCity(req, res){
+        const market = this.service.selectMarketByCity(req.params.city)
+        res.send(market)
+    }
+
+    selectMarketByTypeAndCity(req, res){
+        const type = this.service.selectMarketByType(req.params.type)
+        const city = this.service.selectMarketByCity(req.params.city)
+        const response = type.filter(marketT => city.some(marketC => marketT.location == marketC.location))
+        console.log(response)
+        
+        res.send(response)
     }
 }
 

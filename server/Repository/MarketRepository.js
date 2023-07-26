@@ -28,4 +28,12 @@ export default class MarketRepository{
         });
         this.dbMarkets.encodeData()
     }
+
+    selectMarketByType(type){
+        return this.dbMarkets.data.filter(market => market.etablissement_type == type)
+    }
+
+    selectMarketByCity(city){
+        return this.dbMarkets.data.filter(market => market.location == city)
+    }
 }
