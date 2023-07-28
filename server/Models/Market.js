@@ -44,4 +44,12 @@ export default class Market{
             "mail": this.mail
         }
     }
+
+    getLocation(){
+        return this.location
+    }
+
+    getEtablissement(){
+        return this.etablissement
+    }
 }

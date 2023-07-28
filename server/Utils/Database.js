@@ -12,9 +12,8 @@ export default class Database{
         })
     }
 
-    encodeData(){
-
-        const data = JSON.stringify(this.data, null, 2)
+    encodeData(newData = this.data){
+        const data = JSON.stringify(newData, null, 2)
 
         fs.writeFile('./App/MOCK_DATA.json', data, (error) => {
             if(error){ throw error }

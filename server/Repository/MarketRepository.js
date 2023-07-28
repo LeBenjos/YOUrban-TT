@@ -18,8 +18,8 @@ export default class MarketRepository{
     }
 
     deleteMarket(id){
-        this.dbMarkets.data = this.dbMarkets.data.filter(market => market.id != id)
-        this.dbMarkets.encodeData()
+        const newData = this.dbMarkets.data.filter(market => market.id != id)
+        this.dbMarkets.encodeData(newData)
     }
 
     addMarket(newData){
@@ -35,5 +35,9 @@ export default class MarketRepository{
 
     selectMarketByCity(city){
         return this.dbMarkets.data.filter(market => market.location == city)
+    }
+
+    encodeData(newData){
+        this.dbMarkets.encodeData(newData)
     }
 }

@@ -156,6 +156,28 @@ export default class MarketService{
         return response
     }
 
+    deleteMarketByCity(city){
+        const allMarket = this.repository.selectMarket()
+        const cityMarket = this.repository.selectMarketByCity(city)
+        if(cityMarket.length == 0){ throw new Error("0 market found") }
+
+        const newData = allMarket.filter(marketA => cityMarket.some(marketC => marketC.location != marketA.location))
+        this.repository.encodeData(newData)
+        
+        return cityMarket.length
+    }
+
+    deleteMarketByType(type){
+        const allMarket = this.repository.selectMarket()
+        const typeMarket = this.repository.selectMarketByType(type)
+        if(typeMarket.length == 0){ throw new Error("0 market found") }
+
+        const newData = allMarket.filter(marketA => typeMarket.some(marketT => marketT.etablissement_type != marketA.etablissement_type))
+        this.repository.encodeData(newData)
+        
+        return typeMarket.length
+    }
+
     isIdExist(id){
         if(this.getMarketById(id) instanceof Market){
             return true

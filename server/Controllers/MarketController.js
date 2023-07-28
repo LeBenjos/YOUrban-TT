@@ -72,8 +72,43 @@ class MarketController{
     selectMarketByTypeAndCity(req, res){
         const type = this.service.selectMarketByType(req.params.type)
         const city = this.service.selectMarketByCity(req.params.city)
-        const response = type.filter(marketT => city.some(marketC => marketT.location == marketC.location))        
+        const response = type.filter(marketT => city.some(marketC => marketT.getLocation() == marketC.getLocation()))        
         res.send(response)
+    }
+
+    selectEtablissementByCity(req, res){
+        const market = this.service.selectMarketByCity(req.params.city)
+        const response = []
+        market.forEach(m => {
+            response.push(m.getEtablissement())
+        });
+
+        res.send(response)
+    }
+
+    selectEtablissementByCityAndType(req, res){
+        const city = this.service.selectMarketByCity(req.params.city)
+        const type = this.service.selectMarketByType(req.params.type)
+        const market = city.filter(marketC => type.some(marketT => marketC.getLocation() == marketT.getLocation()))
+
+        const response = []
+        market.forEach(m => {
+            response.push(m.getEtablissement())
+        });
+
+        res.send(response)
+    }
+
+    deleteEtablissementByCity(req, res){
+        const number = this.service.deleteMarketByCity(req.params.city)
+
+        res.send(`All establishments in ${req.params.city} (${number}) are deleted`)
+    }
+
+    deleteEtablissementByType(req, res){
+        const number = this.service.deleteMarketByType(req.params.type)
+
+        res.send(`All ${req.params.type} (${number}) establishments are deleted`)
     }
 }
 

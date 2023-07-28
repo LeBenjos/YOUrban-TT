@@ -21,5 +21,10 @@ router.get('/type/:type', (req, res) => marketController.selectMarketByType(req,
 router.get('/city/:city', (req, res) => marketController.selectMarketByCity(req, res))
 router.get('/type/:type/:city', (req, res) => marketController.selectMarketByTypeAndCity(req, res))
 
+// Exercice Bonus
+router.get('/etablissement/:city', (req, res) => marketController.selectEtablissementByCity(req, res))
+router.get('/etablissement/:city/:type', (req, res) => marketController.selectEtablissementByCityAndType(req, res))
+router.delete('/etablissement/:city', (req, res) => marketController.deleteEtablissementByCity(req, res))
+router.delete('/etablissement/type/:type', (req, res) => marketController.deleteEtablissementByType(req, res))
 
 export default router
