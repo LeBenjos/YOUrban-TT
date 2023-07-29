@@ -16,6 +16,10 @@ Le rendu doit être sous forme d’API avec la possibilité de :
 - Modifier un élément à l’aide de son ID
 - Obtenir un élément à l’aide de son nom
 
+#### Retours d'expériences :
+25/07/2023 - Apprentissage d'Express, construction du projet et réalisation de l'application avec les routes nécessaires pour le CRUD.
+26/07/2023 - Finalisation du CRUD.
+
 ### Exercice N°2 :
 ---
 Pour travailler sur des notions autres, merci d’essayer de réaliser les routes
@@ -24,6 +28,9 @@ API suivantes :
 - Obtenir tous les commerces d’un secteur d’activité donné
 - Obtenir tous les commerces d’une ville donnée
 - Obtenir tous les commerces d’un secteur d’activité dans une ville donnée
+
+#### Retours d'experiences :
+27/07/2023 - Mise en place des routes API demandées.
 
 ### Exercice BONUS :
 ---
@@ -34,6 +41,9 @@ routes API suivantes :
 - Obtenir tous les établissements en fonctions du secteur et de la ville
 - Supprimer tous les établissements d’une ville
 - Supprimer tous les établissements d’un secteur d’activité
+
+#### Retours d'experiences :
+28/07/2023 - Mise en place des routes API demandées.
 
 ## Front-End
 **Outils Front-End :**
