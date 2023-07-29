@@ -108,7 +108,7 @@ class MarketController{
     deleteEtablissementByType(req, res){
         const number = this.service.deleteMarketByType(req.params.type)
 
-        res.send(`All ${req.params.type} (${number}) establishments are deleted`)
+        res.send(`All ${req.params.type} establishments (${number}) are deleted`)
     }
 }
 
